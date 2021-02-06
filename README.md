@@ -1,5 +1,5 @@
 # SSHBrute
-<p>SSH Procotol Brute Forcer.</p>
+<p>SSH (Secure Shell) Brute Forcer.</p>
 <br>
 <p>How to use:</p>
 <pre>
