@@ -94,6 +94,10 @@ for password in wordlist_file:
         else:
             print(good + "Password found!")
             print(good + username + "@" + hostname + " password: " + password + "\n")
+            open(str(hostname + ".txt"), "x", encoding="utf-8")
+            with open(str(hostname + ".txt"), "w", encoding="utf-8") as f:
+                f.write("Hostname: " + hostname + "\nIP address: " + ip_address + "\nPassword: " + password)
+            print(info + "Result was saved in file: " + hostname + ".txt\n")
             exit()
     except KeyboardInterrupt:
         print(info + "Exiting\n")
