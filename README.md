@@ -1,7 +1,7 @@
 # SSHBrute
 <p>SSH (Secure Shell) Brute Forcer.</p>
 <h3>requirements:</h3>
-<p>paramiko</p>
+<p>paramiko package</p>
 <pre>pip install paramiko</pre>
 <br>
 <p>How to use:</p>
